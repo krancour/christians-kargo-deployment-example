@@ -13,7 +13,7 @@ until kustomize build --enable-helm https://github.com/christianh814/kargo-deplo
 Wait for external secrets to be ready
 
 ```shell
-kubectl rollout status deployment.apps/external-secrets-cert-controller -n external-secrets
+kubectl rollout status deployment.apps/external-secrets -n external-secrets
 ```
 
 ## External Secret 
