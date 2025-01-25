@@ -4,9 +4,9 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- argocd-ns.yaml
 - ../system/argocd
 - app-of-apps.yaml
+- ../system/external-secrets
 
 sortOptions:
   order: fifo

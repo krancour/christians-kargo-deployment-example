@@ -9,10 +9,28 @@ until kustomize build --enable-helm https://github.com/christianh814/kargo-deplo
 ```
 
 
-## Patch
+## External Secret 
 
-Patch or it won't work. A Dummy secret is stored here just for example purposes. You don't need this patch if you've replaced the example secret with something like an https://external-secrets.io/ object.
+The following won't work for you unless you export the right stuff. This HAS to be done RIGHT AFTER YOU DEPLOY ^
 
 ```shell
-kubectl patch secrets -n kargo-demo kargo-demo-repo -p "{\"stringData\":{\"password\":\"${KARGO_GH_PAT}\"}}"
+kubectl apply -f - <<EOF
+apiVersion: external-secrets.io/v1beta1
+kind: ClusterSecretStore
+metadata:
+  name: kargo-demo-repo-css
+spec:
+  provider:
+    fake:
+      data:
+      - key: "/data/password"
+        value: "${KARGO_GH_PAT}"
+        version: "v1"
+      - key: "/data/username"
+        value: "${KARGO_GH_USERNAME}"
+        version: "v1"
+      - key: "/data/repoURL"
+        value: "https://github.com/christianh814/kargo-simple-demo"
+        version: "v1"
+EOF
 ```
