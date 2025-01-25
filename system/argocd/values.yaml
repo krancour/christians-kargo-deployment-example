@@ -1,0 +1,26 @@
+#argo-cd:
+configs:
+  cm:
+    '"kustomize.buildOptions"': --enable-helm
+  secret:
+    argocdServerAdminPassword: $2a$10$pKM9yRpR2G5X8c3.M.lgs.v5xBBzEyiJnH5vrWYGkO3JNr5HTW8yq
+dex:
+  enabled: false
+global:
+  domain: argocd.7f000001.nip.io
+notifications:
+  enabled: false
+server:
+  extensions:
+    contents:
+    - name: argo-rollouts
+      url: https://github.com/argoproj-labs/rollout-extension/releases/download/v0.3.3/extension.tar
+    enabled: true
+  ingress:
+    annotations:
+      '"nginx.ingress.kubernetes.io/force-ssl-redirect"': true
+      '"nginx.ingress.kubernetes.io/ssl-passthrough"': true
+    enabled: true
+    hostname: argocd.7f000001.nip.io
+    ingressClassName: nginx
+    tls: true

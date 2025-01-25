@@ -1,0 +1,5 @@
+argo-rollouts:
+  installCRDs: true
+  controller:
+    image:
+      pullPolicy: IfNotPresent
