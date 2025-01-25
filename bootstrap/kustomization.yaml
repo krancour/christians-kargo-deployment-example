@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - ../system/argocd
 - ../system/external-secrets
+- ../configs/argocd/appproject-system.yaml
 - app-of-apps.yaml
 
 sortOptions:
