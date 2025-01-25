@@ -16,13 +16,13 @@ spec:
       annotations:
         kargo.akuity.io/authorized-stage: kargo-demo:{{stage}}
     spec:
-      project: default
+      project: tenants
       source:
         repoURL: https://github.com/christianh814/kargo-deployment-example
         targetRevision: stage/{{stage}}
         path: ./
       destination:
-        server: https://kubernetes.default.svc
+        name: in-cluster
         namespace: kargo-demo-{{stage}}
       syncPolicy:
         syncOptions:

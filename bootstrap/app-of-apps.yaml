@@ -4,7 +4,7 @@ metadata:
   name: bootstrap
   namespace: argocd
 spec:
-  project: default
+  project: system
   source:
     repoURL: https://github.com/christianh814/kargo-deployment-example
     targetRevision: main

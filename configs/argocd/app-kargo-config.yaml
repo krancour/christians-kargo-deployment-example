@@ -4,7 +4,7 @@ metadata:
   name: kargo-config
   namespace: argocd
 spec:
-  project: default
+  project: config
   source:
     repoURL: https://github.com/christianh814/kargo-deployment-example
     targetRevision: main
