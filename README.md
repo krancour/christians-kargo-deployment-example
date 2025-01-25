@@ -8,6 +8,13 @@ Just an example, if you're not well versed in Argo CD and/or Kustomize, you WILL
 until kustomize build --enable-helm https://github.com/christianh814/kargo-deployment-example/bootstrap | kubectl apply -f  - ; do sleep 3; done
 ```
 
+## Wait for rollout
+
+Wait for external secrets to be ready
+
+```shell
+kubectl rollout status deployment.apps/external-secrets-cert-controller -n external-secrets
+```
 
 ## External Secret 
 
