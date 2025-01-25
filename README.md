@@ -39,5 +39,5 @@ EOF
 Application takes a while to be ready, but it'll eventually come back.
 
 ```shell
-kubectl wait --timeout=180s --for=jsonpath='{.status.health.status}'=Healthy app/bootstrap -n argocd
+kubectl wait --timeout=300s --for=jsonpath='{.status.sync.status}'=Synced app/bootstrap -n argocd
 ```
