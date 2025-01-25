@@ -14,7 +14,8 @@ The following won't work for you unless you export the right stuff. This HAS to 
 
 ```shell
 kubectl apply -f - <<EOF
-apiVersion: external-secrets.io/v1beta1 kind: ClusterSecretStore
+apiVersion: external-secrets.io/v1beta1
+kind: ClusterSecretStore
 metadata:
   name: kargo-demo-repo-css
 spec:
