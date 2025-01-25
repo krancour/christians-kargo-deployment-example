@@ -14,4 +14,5 @@ until kustomize build --enable-helm https://github.com/christianh814/kargo-deplo
 Patch or it won't work. A Dummy secret is stored here just for example purposes. You don't need this patch if you've replaced the example secret with something like an https://external-secrets.io/ object.
 
 ```shell
+kubectl patch secrets -n kargo-demo kargo-demo-repo -p "{\"stringData\":{\"password\":\"${KARGO_GH_PAT}\"}}"
 ```
