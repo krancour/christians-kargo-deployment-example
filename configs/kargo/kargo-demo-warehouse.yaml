@@ -1,6 +1,8 @@
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   name: kargo-demo
   namespace: kargo-demo
 spec:
@@ -9,4 +11,4 @@ spec:
       repoURL: https://github.com/christianh814/kargo-deployment-example
       branch: main
       includePaths:
-        - apps/**
+        - app/

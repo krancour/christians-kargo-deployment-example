@@ -1,0 +1,26 @@
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: uat
+  namespace: kargo-demo
+  annotations:
+    kargo.akuity.io/color: yellow
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: kargo-demo
+    sources:
+      stages:
+      - test
+  promotionTemplate:
+    spec:
+      vars:
+      - name: targetBranch
+        value: uat
+      steps:
+      - task:
+          name: default-promote
+        as: promote-to-uat
