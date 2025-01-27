@@ -29,7 +29,7 @@ spec:
         value: "${KARGO_GH_USERNAME}"
         version: "v1"
       - key: "/data/repoURL"
-        value: "https://github.com/christianh814/kargo-simple-demo"
+        value: "https://github.com/christianh814/kargo-deployment-example"
         version: "v1"
 EOF
 ```
