@@ -66,7 +66,7 @@ This is an example of a Mono-Repo (where everything is contained herein). The id
 
 ```text annotate
 .
-├── app # Manifests that Kargo will promote
+├── app $${\color{yellow}# Manifests that Kargo will promote}$$
 │   ├── base
 │   └── stages
 │       ├── prod
