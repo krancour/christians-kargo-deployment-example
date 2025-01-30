@@ -2,8 +2,6 @@
 configs:
   cm:
     '"kustomize.buildOptions"': --enable-helm
-  secret:
-    argocdServerAdminPassword: $2a$10$pKM9yRpR2G5X8c3.M.lgs.v5xBBzEyiJnH5vrWYGkO3JNr5HTW8yq
 dex:
   enabled: false
 global:
