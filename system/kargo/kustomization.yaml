@@ -11,4 +11,5 @@ helmCharts:
   version: 1.2.1
   repo: oci://ghcr.io/akuity/kargo-charts
   releaseName: kargo
+  namespace: kargo
   valuesFile: values.yaml
