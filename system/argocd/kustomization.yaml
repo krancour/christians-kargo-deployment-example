@@ -12,3 +12,17 @@ helmCharts:
   repo: https://argoproj.github.io/argo-helm
   releaseName: argocd
   valuesFile: values.yaml
+
+patches:
+- target:
+    version: v1
+    kind: Secret
+    name: argocd-initial-admin-secret
+    namespace: argocd
+  patch: |-
+    $patch: delete
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: argocd-initial-admin-secret
+      namespace: argocd
