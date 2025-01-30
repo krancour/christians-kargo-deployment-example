@@ -40,7 +40,7 @@ spec:
       - key: "/data/admin_password"
         value: "${ARGOCD_ADMIN_PASSWORD}"
         version: "v1"
-      - key: "/data//data/admin_password_mtime"
+      - key: "/data/admin_password_mtime"
         value: "$(date +%FT%T%Z)"
         version: "v1"
 EOF
