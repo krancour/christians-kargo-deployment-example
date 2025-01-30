@@ -59,3 +59,28 @@ You probably need to wait for the application controller before you can visit th
 ```shell
 kubectl rollout status sts/argocd-application-controller -n argocd
 ```
+
+## Repository Layout
+
+This is an example of a Mono-Repo (where everything is contained herein). The idea being to "GitOps Everything" (or as much as you can), for Kargo + Argo CD.
+
+```text annotate
+.
+├── app # Manifests that Kargo will promote
+│   ├── base
+│   └── stages
+│       ├── prod
+│       ├── test
+│       └── uat
+├── bootstrap # Entrypoint for this repo. Applying this directory will "deploy everything" in this repo
+├── configs # Configurations specific to each installation. (e.g. Applications, ApplicationSets, Kargo Projects, Kargo Pipelines, etc)
+│   ├── argocd
+│   └── kargo
+└── system # Installation manifests (i.e. the helmcharts to install the specified tool)
+    ├── argocd
+    ├── argo-rollouts
+    ├── cert-manager
+    ├── external-secrets
+    ├── kargo
+    └── nginx
+```
