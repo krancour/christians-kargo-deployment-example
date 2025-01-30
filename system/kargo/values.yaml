@@ -3,6 +3,6 @@ api:
     name: kargo-admin-secret
   adminAccount:
     tokenTTL: 24h
-  host: host: localhost:30081
+  host: 'localhost:30081'
 controller:
   logLevel: DEBUG
