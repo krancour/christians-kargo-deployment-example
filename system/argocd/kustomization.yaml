@@ -13,6 +13,7 @@ helmCharts:
   releaseName: argocd
   valuesFile: values.yaml
 
+# Argo CD argocd-initial-admin-secret is harmless to have if you've set the admin username/pass, but not needed.
 patches:
 - target:
     version: v1
